@@ -5,7 +5,15 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    'gatsby-plugin-resolve-src',
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: 'gatsby-plugin-transition-link',
+      options: {
+        layout: require.resolve(`./src/components/layout.js`),
+        injectPageProps: false,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
